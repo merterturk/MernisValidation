@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Response";
+}
+
+<h2 class="text-center text-primary">Doğrulama Sonucu</h2>
+
+@if(Convert.ToBoolean(TempData["Result"]) == true) {
+    <div class="alert alert-success">
+        <span>Sorgulama Başarılı,Onaylandı</span>
+    </div>
+}
+else{ 
+<div class="alert alert-danger">
+    <span>Sorgulama Başarısız,Onaylanmadı</span>
+</div>
+}
+

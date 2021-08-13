@@ -1,0 +1,32 @@
+﻿@using KimlikDogrula.WebUI.Models
+@model Kimlik
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2 class="text-center text-primary mt-5">Kimlik Doğrula</h2>
+@using(Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>TC Kimlik</label>
+        @Html.TextBoxFor(x => x.TC, new { @type = "number",@class = "form-control", @placeholder = "TC Kimlik No Giriniz...",@maxlength = "11"})
+        @Html.ValidationMessageFor(x => x.TC,null,new{@class="text-danger"})
+    </div>
+    <div class="form-group">
+        <label>Ad</label>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @placeholder = "Adınızı Giriniz..." })
+        @Html.ValidationMessageFor(x => x.Ad,null,new {@class="text-danger"})
+    </div>
+    <div class="form-group">
+        <label>Soyad</label>
+        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", @placeholder = "Soyadınızı Giriniz..." })
+        @Html.ValidationMessageFor(x => x.Soyad, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label>Doğum Yılı</label>
+        @Html.TextBoxFor(x => x.DogumYili, new {@class = "form-control", @maxlength = "4",@placeholder = "Yaşınızı Giriniz..." })
+        @Html.ValidationMessageFor(x => x.DogumYili, null, new { @class = "text-danger"})
+    </div>
+    <button type="submit" class="btn btn-primary w-100 mt-4"><span style="font-size:20px;">Sorgula</span></button>
+}
+
